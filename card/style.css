@@ -1,4 +1,4 @@
 .card {
     width: 300px;
-    background-image: href="Media/ulei.jpg";
+    background-image: url('Media/ulei.jpg');
 }
