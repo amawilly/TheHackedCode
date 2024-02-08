@@ -7,7 +7,7 @@
     return aniTrecuti;
   }
   var elementAni = document.getElementById("ani");
-  var dataMoment = 2006 ;
+  var dataMoment = "2006";
   var aniTrecuti = calculeazaAniTrecuti(dataMoment);
   elementAni.textContent = aniTrecuti;
 
