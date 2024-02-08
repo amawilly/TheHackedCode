@@ -3,63 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar Example</title>
-    <style>
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        li a:hover {
-            background-color: #111;
-        }
-
-        .continutulprincipal {
-            padding: 0px 3px 100cqmax ;
-            background-color:#333;
-            color:lavender;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-    </style>
+    <title>Grenauto-Group</title>
+    <link rel="shortcut icon" href="Icons/steering-wheel.png">
+    <link rel="stylesheet" href="Styles/style.css">
 </head>
-<body bgcolor="grey" >
-
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="continutulprincipal">
-        <h1>Ceva continut foarte important</h1>
-        <p>Ceva continut simplu</p>
-        <p>Inca ceva continut</p>
+<body>
+    <div class="page">
+        <header class="head">
+            <ul class="menu">
+                <li>
+                    <a class="home">S.C. Grenauto-Group SRL</a>
+                </li>
+                <div class="centru">
+                    <li><a>Categorii</a>
+                        <ul>
+                            <li class="text">
+                                <a href="">Uleiuri</a>
+                                <a href="">Acumulatoare</a>
+                                <a href="">Cabluri</a>
+                                <a href="">Instrumente</a>
+                                <a href="">Vopsele</a>
+                                <a href="">Echipament Audio</a>
+                                <a href="">Accesorii</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="ghid">Ghid</a>
+                        <ul>
+                            <li class="text">
+                                <a href="">Uleiuri</a>
+                                <a href="">Acumulatoare</a>
+                                <a href="">Cabluri</a>
+                                <a href="">Instrumente</a>
+                                <a href="">Vopsele</a>
+                                <a href="">Echipament Audio</a>
+                                <a href="">Accesorii</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="promo">Promotii</a>
+                    </li>
+                </div>
+                <div class="data">
+                    <li>
+                        <a class="search">
+                            <input type="text" >
+                            <button><img src="Icons/transparency.png" height="30px" alt=""></button>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon"><img src="/Icons/call-center.png" alt="call-center"></a>
+                    </li>
+                </div>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="main-text">
+                <span class="descriere">
+                    Magazin de piese auto
+                </span>
+                <span class="main">
+                    Arata-i masinei cam ce poate fi in stare<br>cu adevarat!
+                </span>
+                <span class="mesaj">
+                    Bine ai venit la magazinul nostru online de piese auto, unde visurile devin realitate și mașina ta prinde viață! Fiecare piesă pe care o găsești aici este un pas către transformarea mașinii tale într-o operă de artă pe patru roți. Fii determinat, fii inspirat și bucură-te de fiecare kilometru din această călătorie extraordinară!
+                </span>
+                <a class="link" href="">Treci la produse</a>
+            </div>
+            <div class="experienta">
+                <p><span id="ani"></span> ani de experienta</p>
+                <p><span id="produse"></span> produse in stoc</p>
+            </div>
+            <div class="circle-car"></div>
+            <div class="car-engine">
+                <img src="/Media/mecanic-removebg-preview.png" alt="car-engine">
+            </div>
+        </div>
     </div>
-
-
+    <script src="/Scripts/main.js"></script>
 </body>
 </html>

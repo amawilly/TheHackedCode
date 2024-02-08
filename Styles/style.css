@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+	margin: 0px;
+} 
+.text{
+	font-family: cursive;
+	font-size: 18px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.content {
+    justify-content: space-around;
+    display: flex;
+}
+.menu{
+    background: #333;
+	display: flex;
+	padding: 10px auto 10px auto;
+	font-size: 20px;
+	transition: all 0.3s;
+    justify-content: space-between;
+    height: 60px;
+    margin: 0;
+}
+.centru {
+    display: flex;
+}
+.centru .ghid {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.menu li{
+	list-style: none;
+	position: relative;
+}   
+.menu a{
+	color: white;
+	text-decoration: none;
+	display: block;
+	transition: all 0.3s;
+	font-family: cursive;
+	text-shadow: 3px 3px 5px black;
+    height: 75%;
+    margin-top: 7px;
+    font-family: 'Inter', sans-serif;
+}
+.menu .home {
+    font-family: 'Protest Strike', sans-serif;
+    font-size: 26px;
+}
+.menu .promo {
+    color: #a8ff78;
+}
+.menu a:hover {
+	text-shadow: 3px 3px 10px black;
+}
+.menu li:hover ul {
+	display: block;
+	font-size: 25px;
+    z-index: 1;
+}
+.text {
+    background: #444;
+	border-radius: 17px;
+	transition: all 0.3s;
+    padding-top: 1px;
+    padding-bottom: 5px;
+}
+.menu ul{
+	position: absolute;
+	left: 0;
+	top: 100%;
+	display: none;
+	padding: 0;
+	font-family: cursive;
+}
+.page {
+    background: linear-gradient(to top left, #222 10%, #333 30%, #444 70%, #555 90%);
+    background-size: cover center;
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+.data {
+    display: flex;
+    width: 50vh;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+.search {
+    background: #444;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+.search input {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    height: 50%;
+}
+.search button {
+    background: none;
+    border: none;
+    margin-left: 10px;
+}
+.head .menu li a {
+    align-items: center;
+    display: flex;
+    justify-content: left;
+}
+.icon img {
+    width: 45px;
+}
+.car-engine {
+    position: absolute;
+    bottom: -10px;
+    right: 10vh;
+}
+.car-engine img {
+    height: 500px;
+}
+.circle-car {
+    background: #333;
+    height: 560px;
+    width: 560px;
+    position: absolute;
+    bottom: -120px;
+    right: 21vh;
+    border-radius: 50%;
+}
+.main-text {
+    position: absolute;
+    left: 15vh;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    top: 25vh;
+}
+.main-text span{
+    display: block;
+}
+.descriere {
+    font-size: 24px;
+    background-color: #78ff95;
+    width: 240px;
+    text-align: center;
+}
+.main {
+    font-size: 40px;
+    color: white;
+    text-shadow: 3px 3px 5px black;
+    transition: all 0.3s;
+}
+.main:hover {
+    text-shadow: 3px 3px 10px black;
+} 
+.main-text .mesaj {
+    width: 80vh;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+    color: #999;
+}
+.main-text .link {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #78ff95;
+    font-size: 30px;
+}
+.experienta {
+    position: absolute;
+    bottom: 5vh;
+    left: 20vh;
+    display: flex;
+}
+.experienta p {
+    font-size: 20px;
+    color: #999;
+    margin-right: 30px;
+}
+.experienta span {
+    font-size: 36px;
+    font-family: 'Protest Strike', sans-serif;
+    color: white;
+}
+/*---------------------------------------------------------------------*/
+
+@media screen {
+    
+}
