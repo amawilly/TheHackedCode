@@ -5,6 +5,38 @@
 body{
 	margin: 0px;
 } 
+/* Stilizare bara de derulare verticală pentru body */
+/* Stilizare bara de derulare verticală pentru body */
+body::-webkit-scrollbar {
+    width: 11px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #888; /* Culoarea butonului de derulare */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: #000; /* Culoarea fundalului scrollbarului */
+  }
+  
+  /* Stilizare bara de derulare când este la început */
+  body.scrollbar-start::-webkit-scrollbar-thumb {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  /* Stilizare bara de derulare când este la mijloc */
+  body.scrollbar-middle::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  }
+  
+  /* Stilizare bara de derulare când este la sfârșit */
+  body.scrollbar-end::-webkit-scrollbar-thumb {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  
 .text{
 	font-family: cursive;
 	font-size: 18px;
@@ -79,10 +111,8 @@ body{
 }
 .page {
     background: linear-gradient(to top left, #222 10%, #333 30%, #444 70%, #555 90%);
-    background-size: cover center;
     width: 100%;
-    background-size: cover;
-    height: 100vh;
+    min-height: 100vh;  
     overflow: hidden;
 }
 .data {
@@ -115,29 +145,80 @@ body{
 .icon img {
     width: 45px;
 }
-.car-engine {
+.car-engine, .car-piston, .car-wheel, .car-pompa {
     position: absolute;
+}
+.car-piston, .car-wheel, .car-pompa {
+    z-index: 2;
+}
+.car-engine {
     bottom: -10px;
-    right: 10vh;
+    right: 0%;
 }
 .car-engine img {
     height: 500px;
 }
+.car-piston {
+    top: 39%;
+    right: 41%;
+}
+.car-piston img {
+    height: 170px;
+}
+.car-wheel {
+    top: 23.8%;
+    right: 10.5%;
+}
+.car-wheel img {
+    height: 105px;
+}
+.car-pompa {
+    top: 60%;
+    right: 0%;
+}
+.car-pompa img {
+    height: 130px;
+}
+.circle-car, .circle-piston, .circle-wheel, .circle-pompa {
+    position: absolute;
+    border-radius: 50%;
+}
+.circle-piston, .circle-wheel, .circle-pompa {
+    background: #222;
+    z-index: 1;
+}
 .circle-car {
     background: #333;
-    height: 560px;
-    width: 560px;
-    position: absolute;
-    bottom: -120px;
-    right: 21vh;
-    border-radius: 50%;
+    height: 580px;
+    width: 580px;
+    bottom: -20%;
+    right: 4%;
+}
+.circle-piston {
+    width: 140px;
+    height: 140px;
+    top: 43%;
+    right: 42%;
+}
+.circle-wheel {
+    width: 100px;
+    height: 100px;
+    top: 24%;
+    right: 12%;
+}
+.circle-pompa {
+    width: 100px;
+    height: 100px;
+    top: 66%;
+    right: 2%;
 }
 .main-text {
     position: absolute;
-    left: 15vh;
+    left: 5%;
     font-family: 'Lato', sans-serif;
     position: absolute;
-    top: 25vh;
+    width: 50%;
+    top: 15%;
 }
 .main-text span{
     display: block;
@@ -158,7 +239,7 @@ body{
     text-shadow: 3px 3px 10px black;
 } 
 .main-text .mesaj {
-    width: 80vh;
+    width: 70%;
     margin-top: 30px;
     margin-left: 10px;
     margin-bottom: 40px;
@@ -171,8 +252,8 @@ body{
 }
 .experienta {
     position: absolute;
-    bottom: 5vh;
-    left: 20vh;
+    bottom: 5%;
+    left: 5%;
     display: flex;
 }
 .experienta p {
@@ -185,8 +266,23 @@ body{
     font-family: 'Protest Strike', sans-serif;
     color: white;
 }
+.main-page {
+    min-height: 100vh;
+    background: #555;
+    z-index: 1;
+    position: relative;
+}
 /*---------------------------------------------------------------------*/
 
-@media screen {
-    
-}
+/* @media only screen and (max-width: 1200px) {
+    .circle-car {
+        height: 460px;
+        width: 460px;
+    }
+    .car-engine img {
+        height: 400px;
+    }
+    .circle-piston {
+
+    }
+} */

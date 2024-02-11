@@ -13,3 +13,17 @@
 
   var experienta = document.getElementById("produse");
   experienta.textContent = 1524;
+
+document.addEventListener('scroll', function() {
+  var scrollPosition = (document.documentElement.scrollTop || document.body.scrollTop) + window.innerHeight;
+  var totalHeight = document.documentElement.scrollHeight;
+  var scrollbarClass = 'scrollbar-middle';
+  
+  if (scrollPosition === totalHeight) {
+    scrollbarClass = 'scrollbar-end';
+  } else if (scrollPosition === window.innerHeight) {
+    scrollbarClass = 'scrollbar-start';
+  }
+  
+  document.body.className = scrollbarClass;
+});
