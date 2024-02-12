@@ -27,3 +27,19 @@ document.addEventListener('scroll', function() {
   
   document.body.className = scrollbarClass;
 });
+// fereastra de dialog----------------------------------------------
+var dialog = document.getElementById('dialog');
+
+function afiseazaFereastra() {
+  dialog.showModal();
+}
+
+function inchideFereastra() {
+  dialog.close();
+}
+
+function trimiteFeedback() {
+  var feedback = document.getElementById('feedback').value;
+  inchideFereastra();
+  alert('Mulțumim pentru feedback-ul tău: ' + feedback);
+}
