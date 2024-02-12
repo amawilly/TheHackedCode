@@ -2,41 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 body{
 	margin: 0px;
 } 
-/* Stilizare bara de derulare verticală pentru body */
-/* Stilizare bara de derulare verticală pentru body */
 body::-webkit-scrollbar {
     width: 11px;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #888; /* Culoarea butonului de derulare */
-  }
-  
-  body::-webkit-scrollbar-track {
-    background-color: #000; /* Culoarea fundalului scrollbarului */
-  }
-  
-  /* Stilizare bara de derulare când este la început */
-  body.scrollbar-start::-webkit-scrollbar-thumb {
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+body::-webkit-scrollbar-track {
+    background-color: #000;
+}
+body.scrollbar-start::-webkit-scrollbar-thumb {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-  }
-  
-  /* Stilizare bara de derulare când este la mijloc */
-  body.scrollbar-middle::-webkit-scrollbar-thumb {
+}
+body.scrollbar-middle::-webkit-scrollbar-thumb {
     border-radius: 10px;
-  }
-  
-  /* Stilizare bara de derulare când este la sfârșit */
+}
   body.scrollbar-end::-webkit-scrollbar-thumb {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-  }
-  
-  
+}
 .text{
 	font-family: cursive;
 	font-size: 18px;
@@ -266,15 +256,49 @@ body::-webkit-scrollbar {
     font-family: 'Protest Strike', sans-serif;
     color: white;
 }
+.about {
+    display: flex;
+    justify-content: space-around;
+}
 .main-page {
     min-height: 100vh;
     background: #555;
     z-index: 1;
     position: relative;
 }
-/*---------------------------------------------------------------------*/
+footer {
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    bottom: 0px;
+}
+.main-page .desprenoi {
+    margin-top: 5%;
+    font-family: 'Nunito', sans-serif;
+    background: #444;
+    border-radius: 20px;
+    padding: 10px;
+    display: grid;
+    color: white;
+    width: 40%;
 
-/* @media only screen and (max-width: 1200px) {
+}
+.main-page .desprenoi .upper {
+    font-size: 24px;
+}
+.main-page .desprenoi .slower {
+    font-size: 16px;
+}
+.main-page .map {
+    right: 5%;
+    top: 10%;
+    margin-top: 5%;
+}
+.main-page .map iframe {
+    border-radius: 20px;
+}
+/*---------------------------------------------------------------------*/
+@media only screen and (max-width: 1200px) {
     .circle-car {
         height: 460px;
         width: 460px;
@@ -285,4 +309,4 @@ body::-webkit-scrollbar {
     .circle-piston {
 
     }
-} */
+}
