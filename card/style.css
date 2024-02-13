@@ -20,6 +20,7 @@
     border-radius: 37px;
     border: 3px solid black;
 }
+
 .card span {
     position: absolute;
     font-size: 26px;
@@ -46,4 +47,10 @@
 .card:hover .price {
     transform: translateX(-65px);
     font-size: 18px;
+}
+.carduri{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 10px;
 }
