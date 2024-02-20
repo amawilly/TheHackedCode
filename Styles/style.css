@@ -135,6 +135,9 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
 .icon img {
     width: 45px;
 }
+.banner {
+
+}
 .car-engine, .car-piston, .car-wheel, .car-pompa {
     position: absolute;
 }
@@ -241,9 +244,6 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
     font-size: 30px;
 }
 .experienta {
-    position: absolute;
-    bottom: 5%;
-    left: 5%;
     display: flex;
     max-height: 400px;
 }
