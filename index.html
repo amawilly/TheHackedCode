@@ -19,12 +19,11 @@
                         <ul>
                             <li class="text">
                                 <a href="">Uleiuri</a>
+                                <a href="">Filtre</a>
+                                <a href="">Piese</a>
+                                <a href="">Cosmetica</a>
+                                <a href="">Huse si anvelope</a>
                                 <a href="">Acumulatoare</a>
-                                <a href="">Cabluri</a>
-                                <a href="">Instrumente</a>
-                                <a href="">Vopsele</a>
-                                <a href="">Echipament Audio</a>
-                                <a href="">Accesorii</a>
                             </li>
                         </ul>
                     </li>
@@ -51,9 +50,6 @@
                             <input type="text" >
                             <button><img src="Icons/transparency.png" height="30px" alt=""></button>
                         </a>
-                    </li>
-                    <li>
-                        <a class="icon"><img src="/Icons/call-center.png" alt="call-center"></a>
                     </li>
                 </div>
             </ul>
@@ -126,13 +122,24 @@
         </div>
         <hr>
         <div class="feedback">
-            <button class="dialog" onclick="afiseazaFereastra()">Lasa-ne un feedback!</button>
-            <dialog id="dialog">
-                <h2>Experienta ta conteaza!</h2>
-                <textarea id="feedback" placeholder="Introdu mesaj-ul tău"></textarea>
-                <button onclick="trimiteFeedback()">Trimite mesaj-ul</button>
-                <button onclick="inchideFereastra()">Anulează</button>
-            </dialog>
+            <div>
+                <button class="dialog" onclick="afiseazaFereastra()">Lasa-ne un mesaj!</button>
+                <dialog id="dialog">
+                    <h2>Experienta ta conteaza!</h2>
+                    <textarea id="feedback" placeholder="Introdu mesaj-ul tău"></textarea>
+                    <button onclick="trimiteFeedback()">Trimite mesaj-ul</button>
+                    <button onclick="inchideFereastra()">Anulează</button>
+                </dialog>
+            </div>
+            <div>
+                <button class="dialog" onclick="afiseazaFereastra()">Suna-ne!</button>
+                <dialog id="dialog">
+                    <h2>Experienta ta conteaza!</h2>
+                    <textarea id="feedback" placeholder="Introdu mesaj-ul tău"></textarea>
+                    <button onclick="trimiteFeedback()">Trimite mesaj-ul</button>
+                    <button onclick="inchideFereastra()">Anulează</button>
+                </dialog>
+            </div>
         </div>
         <footer>
             <hr>

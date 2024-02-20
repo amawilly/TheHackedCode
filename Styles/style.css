@@ -221,6 +221,7 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
     background-color: #78ff95;
     width: 240px;
     text-align: center;
+    color: #444;
 }
 .main {
     font-size: 40px;
@@ -260,46 +261,55 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
 .about {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .main-page {
     min-height: 100vh;
     background: #555;
     z-index: 1;
     position: relative;
+    padding-top: 50px;
+}
+.feedback{
+    justify-content: space-around;
+    display: flex;
 }
 footer {
-    margin-top: 3%;
     width: 100%;
 }
 hr {
+    margin-top: 3%;
+    margin-bottom: 3%;
     width: 90%;
 }
 #dialog {
     width: 400px;
-    background-color: rgba(255, 255, 255, 0.5); /* Transparent */
-    backdrop-filter: blur(10px); /* Efect de blur */
+    background-color: rgba(200, 200, 200, 0.4);
+    backdrop-filter: blur(5px);
     border-radius: 8px;
     padding: 20px;
 }
+#dialog
 textarea {
     width: 100%;
     height: 150px;
     margin-bottom: 10px;
 }
 button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
+    background-color: #78ff95;
+    color: #333;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
 }
 .dialog {
-    margin-top: 3%;
     margin-left: 5%;
+    width: 110%;
 }
 .main-page .desprenoi {
-    margin-top: 5%;
     font-family: 'Nunito', sans-serif;
     background: #444;
     border-radius: 20px;
@@ -307,7 +317,6 @@ button {
     display: grid;
     color: white;
     width: 40%;
-
 }
 .main-page .desprenoi .upper {
     font-size: 24px;
@@ -318,18 +327,44 @@ button {
 .main-page .map {
     right: 5%;
     top: 10%;
-    margin-top: 5%;
 }
 .main-page .map iframe {
     border-radius: 20px;
 }
 /*---------------------------------------------------------------------*/
 @media only screen and (max-width: 1200px) {
-    .circle-car {
-        height: 460px;
-        width: 460px;
+    .main-page .map iframe {
+        width: 550px;
     }
-    .car-engine img {
-        height: 400px;
+}
+@media only screen and (max-width: 1100px) {
+    .main-page .map iframe {
+        width: 500px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .main-page .map iframe {
+        width: 450px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .main-page .map iframe {
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .about {
+        display: block;
+        text-align: center;
+    }
+    .main-page .map iframe {
+        width: 85%;
+        margin-top: 50px;
+    }
+    .main-page .desprenoi {
+        width: 85%;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
