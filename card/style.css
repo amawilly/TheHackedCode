@@ -3,24 +3,27 @@
     width: 200px;
     height: 350px;
     background-color: white;
-    background-image: url('/Media/ulei.jpg');
-    background-size: 200%;
-    background-position: center -70px;
     border-radius: 30px;
-    transition: all 0.5s ease-in-out, border;
     border: 2px solid black;
     background-repeat: no-repeat;
     color: #111;
     overflow: hidden;
     text-align: center;
 }
+.card img {
+    margin-top: 25px;
+    height: 70%;
+    transition: all 0.5s ease-in-out, border;
+
+}
 .card:hover{
-    background-position: center -55px;
-    background-size: 160%;
     border-radius: 37px;
     border: 3px solid black;
 }
-
+.card:hover img {
+    margin-top: 10px;
+    height: 60%;
+}
 .card span {
     position: absolute;
     font-size: 26px;
@@ -29,24 +32,37 @@
     transition: all 0.5s ease-out;
 }
 .denumire {
-    top: 300px;
+    bottom: 25px;
     left: 0%;
     right: 0%;
 }
 .price {
-    top: 240px;
+    top: 243px;
     left: 200px;
     right: 280px;
     width: max-content;
 }
+.specs {
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(100px);
+    transition: all 0.5s ease-out;
+}
+.specs .spec {
+    font-size: 16px;
+    width: 80%;
+}
 .card:hover .denumire {
     transform: translateY(-60px);
-    font-size: 18px;
+    font-size: 20px;
     right: 75px;
 }
 .card:hover .price {
     transform: translateX(-65px);
     font-size: 18px;
+}
+.card:hover .specs {
+    transform: translateY(50px);
 }
 .carduri{
     display: flex;
