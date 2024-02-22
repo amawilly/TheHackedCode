@@ -11,9 +11,6 @@
   var aniTrecuti = calculeazaAniTrecuti(dataMoment);
   elementAni.textContent = aniTrecuti;
 
-  var experienta = document.getElementById("produse");
-  experienta.textContent = 1524;
-
 document.addEventListener('scroll', function() {
   var scrollPosition = (document.documentElement.scrollTop || document.body.scrollTop) + window.innerHeight;
   var totalHeight = document.documentElement.scrollHeight;
@@ -28,13 +25,13 @@ document.addEventListener('scroll', function() {
   document.body.className = scrollbarClass;
 });
 // fereastra de dialog----------------------------------------------
-var dialog = document.getElementById('dialog');
+var dialog = document.getElementById('Mail');
 
-function afiseazaFereastra() {
+function afiseazaMail() {
   dialog.showModal();
 }
 
-function inchideFereastra() {
+function inchideMail() {
   dialog.close();
 }
 
@@ -42,4 +39,22 @@ function trimiteFeedback() {
   var feedback = document.getElementById('feedback').value;
   inchideFereastra();
   alert('Mulțumim pentru feedback-ul tău: ' + feedback);
+}
+// call
+function afiseazaCall() {
+  document.getElementById('Call').showModal();
+}
+
+function inchideCall() {
+  document.getElementById('Call').close();
+}
+
+function sunaNrEmilian() {
+  window.location.href = "tel:+37369503183";
+  inchideCall(); // închide dialogul după ce s-a făcut apelul
+}
+
+function sunaNrDanMihai() {
+  window.location.href = "tel:+37345672399";
+  inchideCall(); // închide dialogul după ce s-a făcut apelul
 }

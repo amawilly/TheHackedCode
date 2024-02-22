@@ -63,13 +63,12 @@
                     Arata-i masinei cam ce poate fi in stare cu adevarat!
                 </span>
                 <span class="mesaj">
-                    Bine ai venit la magazinul nostru online de piese auto, unde visurile devin realitate și mașina ta prinde viață! Fiecare piesă pe care o găsești aici este un pas către transformarea mașinii tale într-o operă de artă pe patru roți. Fii determinat, fii inspirat și bucură-te de fiecare kilometru din această călătorie extraordinară!
+                    Bine ai venit la magazinul nostru online de piese auto, unde mașina ta prinde viață! Fiecare piesă pe care o găsești aici este un pas către transformarea mașinii tale într-o operă de artă pe patru roți. Fii determinat, fii inspirat și bucură-te de fiecare kilometru din această călătorie extraordinară!
                 </span>
                 <a class="link" href="">Treci la produse</a>
                 
                 <div class="experienta">
                     <p><span id="ani"></span> ani de experienta</p>
-                    <p><span id="produse"></span> produse in stoc</p>
                 </div>
             </div>
             <div class="banner">
@@ -123,21 +122,20 @@
         <hr>
         <div class="feedback">
             <div>
-                <button class="dialog" onclick="afiseazaFereastra()">Lasa-ne un mesaj!</button>
-                <dialog id="dialog">
+                <button class="dialog" onclick="afiseazaMail()">Lasa-ne un mesaj!</button>
+                <dialog id="Mail">
                     <h2>Experienta ta conteaza!</h2>
                     <textarea id="feedback" placeholder="Introdu mesaj-ul tău"></textarea>
                     <button onclick="trimiteFeedback()">Trimite mesaj-ul</button>
-                    <button onclick="inchideFereastra()">Anulează</button>
+                    <button onclick="inchideMail()">Anulează</button>
                 </dialog>
             </div>
             <div>
-                <button class="dialog" onclick="afiseazaFereastra()">Suna-ne!</button>
-                <dialog id="dialog">
-                    <h2>Experienta ta conteaza!</h2>
-                    <textarea id="feedback" placeholder="Introdu mesaj-ul tău"></textarea>
-                    <button onclick="trimiteFeedback()">Trimite mesaj-ul</button>
-                    <button onclick="inchideFereastra()">Anulează</button>
+                <button class="dialog" onclick="afiseazaCall()">Suna-ne!</button>
+                <dialog id="Call">
+                    <button onclick="sunaNrEmilian()">Suna la Craciun Emilian</button>
+                    <button class="middle" onclick="sunaNrDanMihai()">Suna la Craciun Dan-Mihai</button>
+                    <button onclick="inchideCall()">Anulează</button>
                 </dialog>
             </div>
         </div>

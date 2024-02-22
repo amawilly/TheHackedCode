@@ -2,7 +2,7 @@
     position: relative;
     width: 200px;
     height: 350px;
-    background-color: white;
+    background-color: #888;
     border-radius: 30px;
     border: 2px solid black;
     background-repeat: no-repeat;
@@ -25,7 +25,6 @@
     height: 60%;
 }
 .card span {
-    position: absolute;
     font-size: 26px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -44,13 +43,29 @@
 }
 .specs {
     display: flex;
+    position: relative;
     justify-content: space-around;
     transform: translateY(100px);
     transition: all 0.5s ease-out;
 }
 .specs .spec {
+    display: flex;
+    justify-content: space-around;
     font-size: 16px;
-    width: 80%;
+    text-align: left;
+    align-items: center;
+}
+.specs button {
+    border: none;
+    background: none;
+}
+.specs button img{
+    width: 50px;
+}
+#buy_now {
+    border-radius: 5px;
+    background: #f5af19;
+    height: 30px;
 }
 .card:hover .denumire {
     transform: translateY(-60px);
@@ -62,9 +77,9 @@
     font-size: 18px;
 }
 .card:hover .specs {
-    transform: translateY(50px);
+    transform: translateY(0px);
 }
-.carduri{
+#produse {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
