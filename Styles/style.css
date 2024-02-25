@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 body{
 	margin: 0px;
+    overflow-x: hidden;
 } 
 body::-webkit-scrollbar {
     width: 11px;
@@ -22,7 +23,7 @@ body.scrollbar-start::-webkit-scrollbar-thumb {
 body.scrollbar-middle::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
-  body.scrollbar-end::-webkit-scrollbar-thumb {
+body.scrollbar-end::-webkit-scrollbar-thumb {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -74,6 +75,7 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
 }
 .menu .promo {
     color: #a8ff78;
+    margin-left: 30px;
 }
 .menu a:hover {
 	text-shadow: 3px 3px 10px black;
@@ -98,10 +100,34 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
 	padding: 0;
 	font-family: cursive;
 }
+.administrator #loginBtn {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.administrator #loginBtn img{
+    width: 50px;
+}
+.administrator .auth-buttons {
+    display: flex;
+    color: #000;
+    margin-right: 30px;
+}
+#loginDialog {
+    width: 35%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3; /* Asigură că fereastra de dialog este afișată deasupra tuturor celorlalte elemente */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundal semi-transparent */
+    padding: 20px; /* Spațiere interioară pentru conținut */
+    border-radius: 10px; /* Margini rotunjite pentru un aspect plăcut */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Umbra pentru efect de adâncime */
+}
 .page {
     background: linear-gradient(to top left, #222 10%, #333 30%, #444 70%, #555 90%);
     width: 100%;
-    min-height: 100vh;  
+    min-height: 91vh;  
     overflow: hidden;
 }
 .data {
@@ -133,7 +159,12 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
 }
 .icon img {
     width: 45px;
-}   
+}  
+.trecilaproduse{
+    background-color: transparent;
+    color: #78ff95;
+    font-size: 22px;
+} 
 .car-engine, .car-piston, .car-wheel, .car-pompa {
     position: absolute;
 }
@@ -218,16 +249,13 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
     width: 240px;
     text-align: center;
     color: #444;
-    font-family: "Protest Strike", sans-serif;
 }
 .main {
     font-size: 40px;
     color: white;
     transition: all 0.3s;
-    font-family: "Protest Strike", sans-serif;
-
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
 }
 .main-text .mesaj {
     width: 70%;
@@ -242,11 +270,10 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
     font-size: 30px;
 }
 .experienta {
-    display: flex;
-    max-height: 400px;
+    width: fit-content;
 }
 .experienta p {
-    font-size: 20px;
+    font-size: 22px;
     color: #999;
     margin-right: 30px;
 }
@@ -254,6 +281,8 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
     font-size: 36px;
     font-family: 'Protest Strike', sans-serif;
     color: white;
+    display: inline-block;
+    transform: translate(-5px, 3px);
 }
 .about {
     display: flex;
@@ -273,6 +302,7 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
 }
 footer {
     width: 100%;
+    background: #555;
 }
 hr {
     margin-top: 3%;
@@ -294,7 +324,7 @@ hr {
 }
 #Call .middle{
     margin-left: 10px;
-    margin-right    : 10px;
+    margin-right: 10px;
 }
 textarea {
     width: 100%;
@@ -336,6 +366,25 @@ button {
 }
 .main-page .map iframe {
     border-radius: 20px;
+}
+.admin {
+    display: flex;
+}
+.admin #loginBtn {
+    margin-top: 10px;
+    margin-right:30px;
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 30px;
+    
+}
+footer span a {
+    text-decoration: none;
+    color: #999;
+    font-family: 'Nunito', sans-serif;
 }
 /*---------------------------------------------------------------------*/
 @media only screen and (max-width: 1200px) {

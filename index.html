@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grenauto-Group</title>
     <link rel="shortcut icon" href="Icons/steering-wheel.png">
     <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/produse.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="page">
-        <header class="head">
-            <ul class="menu">
-                <li>
-                    <a class="home">Grenauto-Group</a>
+    <header class="head">
+        <ul class="menu">
+            <li>
+                <a href="" class="home">Grenauto-Group</a>
+            </li>
+            <div class="centru">
+                <li><a>Categorii</a>
+                    <ul>
+                        <li class="text">
+                            <a href="">Uleiuri</a>
+                            <a href="">Filtre</a>
+                            <a href="">Piese</a>
+                            <a href="">Cosmetica</a>
+                            <a href="">Huse si anvelope</a>
+                            <a href="">Acumulatoare</a>
+                        </li>
+                    </ul>
                 </li>
-                <div class="centru">
-                    <li><a>Categorii</a>
-                        <ul>
-                            <li class="text">
-                                <a href="">Uleiuri</a>
-                                <a href="">Filtre</a>
-                                <a href="">Piese</a>
-                                <a href="">Cosmetica</a>
-                                <a href="">Huse si anvelope</a>
-                                <a href="">Acumulatoare</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="promo">Promotii</a>
-                    </li>
-                </div>
-                <div class="data">
-                    <li>
-                        <a class="search">
-                            <input type="text" >
-                            <button><img src="Icons/transparency.png" height="30px" alt=""></button>
-                        </a>
-                    </li>
-                </div>
-            </ul>
-        </header>
+                <li>
+                    <a class="promo">Promotii</a>
+                </li>
+            </div>
+            <div class="data">
+                <li>
+                    <a class="search">
+                        <input type="text" >
+                        <button><img src="Icons/transparency.png" height="30px" alt=""></button>
+                    </a>
+                </li>
+                <li class="administrator">
+                    <button id="loginBtn" onclick="deschideAdmin()"><img src="./Icons/admin.png" alt="admin"></button>
+                    <dialog id="loginDialog" class="dialog">
+                        <div class="inputs">
+                            <h2>Autentificare</h2>
+                            <input type="text" id="adm-username" placeholder="Nume de utilizator">
+                            <input type="password" id="adm-password" placeholder="Parolă">
+                        </div>
+                        <br>
+                            <button onclick="logareAdmin()">Autentificare</button>
+                            <button onclick="inchideAdmin()">Anulare</button>
+                    </dialog>
+                </li>
+            </div>
+        </ul>
+    </header>
+    <div class="page" id="first-page"> 
         <div class="content">
             <div class="main-text">
                 <span class="descriere">
@@ -52,7 +67,7 @@
                 <span class="mesaj">
                     Bine ai venit la magazinul nostru online de piese auto, unde mașina ta prinde viață! Fiecare piesă pe care o găsești aici este un pas către transformarea mașinii tale într-o operă de artă pe patru roți. Fii determinat, fii inspirat și bucură-te de fiecare kilometru din această călătorie extraordinară!
                 </span>
-                <a class="link" href="">Treci la produse</a>
+                <button class="trecilaproduse" onclick="treci_la_produse()" >Treci la produse</button>
                 
                 <div class="experienta">
                     <p><span id="ani"></span> ani de experienta</p>
@@ -78,7 +93,7 @@
             </div>
         </div>
     </div>
-    <div class="main-page">
+    <div class="main-page" id="second-page">
         <div class="about">
             <div class="desprenoi">
                 <span class="upper">
@@ -106,14 +121,17 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1128.1211263991022!2d29.162157592979636!3d47.214523292281534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c95d1e107dce35%3A0x4352ebc03aefa0c!2sPiese%20Auto!5e1!3m2!1sen!2s!4v1707680928309!5m2!1sen!2s" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        <hr>
-        <div class="feedback">
+        <hr id="first-page">
+        <div class="feedback" id="first-page">
             <div>
                 <button class="dialog" onclick="afiseazaMail()">Lasa-ne un mesaj!</button>
                 <dialog id="Mail">
                     <h2>Experienta ta conteaza!</h2>
-                    <textarea id="feedback" placeholder="Introdu mesaj-ul tău"></textarea>
-                    <button onclick="trimiteFeedback()">Trimite mesaj-ul</button>
+                    <input type="text" id="nume" placeholder="Nume" required>
+                    <input type="text" id="prenume" placeholder="Prenume" required>
+                    <input type="tel" id="telefon" placeholder="Număr de telefon">
+                    <textarea id="feedback" placeholder="Introdu mesaj-ul tău" required></textarea>
+                    <button id="trimiteBtn">Trimite mesaj-ul</button>
                     <button onclick="inchideMail()">Anulează</button>
                 </dialog>
             </div>
@@ -126,13 +144,187 @@
                 </dialog>
             </div>
         </div>
-        <footer>
-            <hr>
-            <span>
-                hallo
-            </span>
-        </footer>
+        <hr>
     </div>
-    <script src="./Scripts/main.js"></script>
+    <div id="produse">            
+        <div id="uleiuri">
+            <div class="card" id="Ulei_Lukoil">
+                <img src="/Produse/uleilukoil.png" alt="Ulei_Lukoil">
+                <span class="denumire">Ulei Lukoil</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Ulei_Luxe">
+                <img src="/Produse/uleiluxe.png" alt="Ulei_Luxe">
+                <span class="denumire">Ulei Luxe</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div  class="card" id="Ulei_Kansler">
+                <img src="/Produse/uleikansler.png" alt="Ulei_Kansler">
+                <span class="denumire">Ulei Kansler</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+                </div>  
+            <div  class="card" id="Ulei_Elf">
+                <img src="/Produse/uleielf.png" alt="Ulei_Elf">
+                <span class="denumire">Ulei Elf</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>  
+        
+            <div  class="card" id="Ulei_Venol">
+                <img src="/Produse/uleivenol.png" alt="Ulei_Venol">
+                <span class="denumire">Ulei Venol</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>  
+        </div>
+        <div id="filtre">
+            <div class="card" id="Filtru_AP013">
+                <img src="/Produse/filtruap013.png" alt="Filtru_AP013">
+                <span class="denumire">Filtru Filtron</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Filtru de aer<br>Amus o intreb pe mama</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Filtru_AP051/4">
+                <img src="/Produse/filtruap0514.png" alt="Filtru_AP051/4">
+                <span class="denumire">Filtru Filtron AP051/4</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Filtru de aer<br>Amus o intreb pe mama</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Filtru_K1014">
+                <img src="/Produse/filtruk1014.png" alt="Filtru_K1014">
+                <span class="denumire">Filtru Filtron K1014</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Filtru de salon<br>Amus o intreb pe mama</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Filtru_OP525">
+                <img src="/Produse/filtruop525.png" alt="Filtru_OP525">
+                <span class="denumire">Filtru Filtron OP525</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Filtru de ulei<br>Amus o intreb pe mama</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Filtru_PP841/1">
+                <img src="/Produse/filtrupp8411.png" alt="Filtru_PP841/1">
+                <span class="denumire">Filtru Filtron PP841/1</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Filtru pentru combustibil<br>Amus o intreb pe mama</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+        </div>
+        <div id="acumulatoare">
+            <div class="card" id="Acum_President">
+                <img src="/Produse/acumpresident.png" alt="Acum_President">
+                <span class="denumire">Acumulator President</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Acumulator<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Acum_Mega">
+                <img src="/Produse/acummega.png" alt="Acum_Mega">
+                <span class="denumire">Acumulator Mega</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Acumulator<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Acum_Energizer">
+                <img src="/Produse/acumenergizer.png" alt="Acum_Energizer">
+                <span class="denumire">Acumulator Energizer</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Filtru pentru combustibil<br>Amus o intreb pe mama</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Acum_Snaider">
+                <img src="/Produse/acumsnaider.png" alt="Acum_Snaider">
+                <span class="denumire">Acumulator Snaider</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Acumulator<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Acum_Akom">
+                <img src="/Produse/acumakom.png" alt="Acum_Akom">
+                <span class="denumire">Acumulator Akom</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Acumulator<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+        </div>
+        <div id="cosmetica">
+            <div class="card" id="Sampon_K2">
+                <img src="/Produse/samponk2.png" alt="Sampon_K2">
+                <span class="denumire">Sampon auto K2</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Sampon pentru automobil<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Sol_K2Akra">
+                <img src="/Produse/solk2akra.png" alt="Solutie_K2Akra">
+                <span class="denumire">Solutie K2 Akra</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Solutie pentru curatarea motorului<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Sol_Abro">
+                <img src="/Produse/solabro.png" alt="Solutie_Abro">
+                <span class="denumire">Solutie Abro</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Solutie pentru curatarea carburatorului<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Sol_K2Alaska">
+                <img src="/Produse/solk2alaska.png" alt="Solutie_K2Alaska">
+                <span class="denumire">Solutie K2 Alaska</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Solutie pentru dezghetarea parbrizului<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+        </div>
+        <div id="accesorii">
+            <div class="card" id="Huse_Alkantara">
+                <img src="/Produse/husealkantara.png" alt="Huse_Alkantara">
+                <span class="denumire">Huse Alkantara</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Huse auto<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Huse_Ozmer">
+                <img src="/Produse/huseozmer.png" alt="Huse_Ozmer">
+                <span class="denumire">Huse Ozmer</span>
+                <span class="price">200 lei</span>
+                <span class="spec">Huse auto<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Anv_Energ">
+                <img src="/Produse/anvenerg.png" alt="Anv_Energ">
+                <span class="denumire">Anvelope Energ</span>
+                <span class="price">200 lei</span>
+                <span class="spec">anvelope auto<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+            <div class="card" id="Anv_Debica">
+                <img src="/Produse/anvdebica.png" alt="Anv_Debica">
+                <span class="denumire">Anvelope Debica</span>
+                <span class="price">200 lei</span>
+                <span class="spec">anvelope auto<br>Idee nam</span>
+                <button type="button" id="buy_now">Cumpara acum</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span class="flaticon">
+            <a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons created by Freepik - Flaticon</a>
+        </span>
+    </footer>
+    <script src="Scripts/main.js"></script>
 </body>
 </html>
