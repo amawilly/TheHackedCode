@@ -1,4 +1,6 @@
 document.getElementById('produse').style.display = "none";
+document.getElementById('administrator').style.display = "none";
+
 
 function calculeazaAniTrecuti(data) {
   var dataCurenta = new Date();
@@ -51,6 +53,7 @@ function treci_la_produse() {
   document.getElementById('produse').style.display = "block";
   document.getElementById('first-page').style.display = "none";
   document.getElementById('second-page').style.display = "none";
+  document.getElementById('administrator').style.display = "none";
 }
 
 function deschideAdmin() {
@@ -67,7 +70,8 @@ function logareAdmin(){
     document.getElementById('first-page').style.display = "none";
     document.getElementById('second-page').style.display = "none";
     document.getElementById('loginDialog').close();
-
+    document.getElementById('produse').style.display = "none";
+    document.getElementById('administrator').style.display = "block";
   }
   else {
     alert("Autentificare eșuată! \nVerifică numele de utilizator și parola.");
