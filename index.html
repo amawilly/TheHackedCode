@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="Icons/steering-wheel.png">
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="Styles/produse.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header class="head">
@@ -16,17 +15,7 @@
                 <a href="" class="home">Grenauto-Group</a>
             </li>
             <div class="centru">
-                <li><a>Categorii</a>
-                    <ul>
-                        <li class="text">
-                            <a href="">Uleiuri</a>
-                            <a href="">Filtre</a>
-                            <a href="">Piese</a>
-                            <a href="">Cosmetica</a>
-                            <a href="">Huse si anvelope</a>
-                            <a href="">Acumulatoare</a>
-                        </li>
-                    </ul>
+                <li><button class="produse_nav" onclick="treci_la_produse()">Produse</button>
                 </li>
                 <li>
                     <a class="promo">Promotii</a>
@@ -126,13 +115,19 @@
             <div>
                 <button class="dialog" onclick="afiseazaMail()">Lasa-ne un mesaj!</button>
                 <dialog id="Mail">
-                    <h2>Experienta ta conteaza!</h2>
-                    <input type="text" id="nume" placeholder="Nume" required>
-                    <input type="text" id="prenume" placeholder="Prenume" required>
-                    <input type="tel" id="telefon" placeholder="Număr de telefon">
-                    <textarea id="feedback" placeholder="Introdu mesaj-ul tău" required></textarea>
-                    <button id="trimiteBtn">Trimite mesaj-ul</button>
-                    <button onclick="inchideMail()">Anulează</button>
+                    <form id="mesaj-form">
+                        <label for="nume-prenume">Nume și Prenume:</label>
+                        <input type="text" id="nume-prenume" name="nume-prenume" required>
+                        
+                        <label for="telefon">Număr de Telefon:</label>
+                        <input type="tel" id="telefon" name="telefon" required>
+                        
+                        <label for="mesaj">Mesaj:</label>
+                        <textarea id="mesaj" name="mesaj" rows="4" required></textarea>
+                        
+                        <button type="submit">Trimite Mesajul</button>
+                        <button type="button" onclick="inchideMail()">Închide</button>
+                    </form>
                 </dialog>
             </div>
             <div>
@@ -147,7 +142,21 @@
         <hr>
     </div>
     <div id="administrator">
-        
+        <dialog id="dialog-formular">
+            <h3>Completeaza informatiile pentru achizitie</h3>
+            <form onsubmit="return adaugaMesaj()">
+                <label for="nume-prenume">Nume și Prenume:</label>
+                <input type="text" id="nume-prenume" name="nume-prenume" required>
+                    
+                <label for="telefon">Număr de Telefon:</label>
+                <input type="tel" id="telefon" name="telefon" required>
+
+                <label for="strada">Strada:</label>
+                <input type="text" id="strada" name="strada" required>
+                
+                <button type="submit">Trimite</button>
+            </form>
+        </dialog>
     </div>
     <div id="produse">            
         <div id="uleiuri">
@@ -155,13 +164,6 @@
                 <img src="./Produse/uleilukoil.png" alt="Ulei_Lukoil">
                 <span class="denumire">Ulei Lukoil</span>
                 <span class="price">199 lei</span>
-                <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
-                <button type="button" id="buy_now">Cumpara acum</button>
-            </div>
-            <div class="card" id="Ulei_Luxe">
-                <img src="./Produse/uleiluxe.png" alt="Ulei_Luxe">
-                <span class="denumire">Ulei Luxe</span>
-                <span class="price">249 lei</span>
                 <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
                 <button type="button" id="buy_now">Cumpara acum</button>
             </div>

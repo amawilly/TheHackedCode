@@ -30,23 +30,62 @@ document.body.className = scrollbarClass;
 });
 
 
+var mesajeSalvate = localStorage.getItem('mesaje') ? JSON.parse(localStorage.getItem('mesaje')) : [];
+
+afiseazaMesaje();
+
 function afiseazaMail() {
-  document.getElementById('Mail').showModal();
+    var dialog = document.getElementById('Mail');
+    dialog.showModal();
 }
+
 function inchideMail() {
-  document.getElementById('Mail').close();
+    var dialog = document.getElementById('Mail');
+    dialog.close();
 }
 
-function trimiteFeedback() {
-  var nume = document.getElementById('nume').value;
-  var prenume = document.getElementById('prenume').value;
-  var telefon = document.getElementById('telefon').value;
-  var feedback = document.getElementById('feedback').value;
-  var data = new Date();
-  var ora = data.getHours() + ":" + (data.getMinutes() < 10 ? '0' : '') + data.getMinutes(); // Ora curentă
-
-  inchideMail();
+function adaugaMesaj(numePrenume, telefon, mesaj) {
+    var mesajNou = {
+        numePrenume: numePrenume,
+        telefon: telefon,
+        mesaj: mesaj
+    };
+    mesajeSalvate.push(mesajNou);
+    localStorage.setItem('mesaje', JSON.stringify(mesajeSalvate));
+    afiseazaMesaje();
 }
+
+function stergeMesaj(index) {
+    mesajeSalvate.splice(index, 1);
+    localStorage.setItem('mesaje', JSON.stringify(mesajeSalvate));
+    afiseazaMesaje();
+}
+
+function afiseazaMesaje() {
+    var mesajeContainer = document.getElementById('administrator');
+    mesajeContainer.innerHTML = '';
+    mesajeSalvate.forEach(function(mesaj, index) {
+        var mesajHTML = "<div class='mesaj'>" +
+                        "<p><strong>Nume și Prenume:</strong> " + mesaj.numePrenume + "</p>" +
+                        "<p><strong>Număr de Telefon:</strong> " + mesaj.telefon + "</p>" +
+                        "<p><strong>Mesaj:</strong> " + mesaj.mesaj + "</p>" +
+                        "<button class='close-button' onclick='stergeMesaj(" + index + ")'>Închide</button>" +
+                        "</div>";
+        mesajeContainer.innerHTML += mesajHTML;
+    });
+}
+
+document.getElementById('mesaj-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var numePrenume = document.getElementById('nume-prenume').value;
+    var telefon = document.getElementById('telefon').value;
+    var mesaj = document.getElementById('mesaj').value;
+    
+    adaugaMesaj(numePrenume, telefon, mesaj);
+    
+    inchideMail();
+});
 
 
 function treci_la_produse() {
@@ -95,4 +134,28 @@ function sunaNrEmilian() {
 function sunaNrDanMihai() {
   window.location.href = "tel:+37345672399";
   inchideCall();
+}
+
+function afiseazaFormular(idCard) {
+  var dialogFormular = document.getElementById('dialog-formular');
+  dialogFormular.showModal();
+}
+
+function adaugaMesaj() {
+  var numePrenume = document.getElementById('nume-prenume').value;
+  var telefon = document.getElementById('telefon').value;
+  var strada = document.getElementById('strada').value;
+  var mesaj = `
+      <p>Detalii comanda:</p>
+      <p>Nume și Prenume: ${numePrenume}</p>
+      <p>Număr de Telefon: ${telefon}</p>
+      <p>Strada: ${strada}</p>
+      <p>Timp: ${new Date()}</p>
+  `;
+  document.getElementById('administrator').innerHTML += mesaj;
+  
+  var dialogFormular = document.getElementById('dialog-formular');
+  dialogFormular.close();
+  
+  return false;
 }
