@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body{
 	margin: 0px;
 } 
@@ -219,15 +218,14 @@ body.scrollbar-middle::-webkit-scrollbar-thumb {
     width: 240px;
     text-align: center;
     color: #444;
-    font-family: "Philosopher", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Protest Strike", sans-serif;
 }
 .main {
     font-size: 40px;
     color: white;
     transition: all 0.3s;
-    font-family: "Philosopher", sans-serif;
+    font-family: "Protest Strike", sans-serif;
+
   font-weight: 400;
   font-style: normal;
 }
@@ -296,7 +294,7 @@ hr {
 }
 #Call .middle{
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right    : 10px;
 }
 textarea {
     width: 100%;

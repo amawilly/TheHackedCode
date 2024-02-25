@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body {
+    background: linear-gradient(to top left, #222 10%, #333 30%, #444 70%, #555 90%);
+    height: 100vh;
+}
 .card{
     position: relative;
     width: 200px;
@@ -25,27 +30,24 @@
     height: 60%;
 }
 .card span {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: all 0.5s ease-out;
 }
 .denumire {
-    bottom: 25px;
-    left: 0%;
-    right: 0%;
+    width: 100%;
 }
 .price {
-    top: 243px;
-    left: 200px;
-    right: 280px;
-    width: max-content;
+    display: none;
+    transition: color 0.5s;
+    color: transparent;
 }
 .specs {
     display: flex;
     position: relative;
     justify-content: space-around;
-    transform: translateY(100px);
+    transform: translateY(30px);
     transition: all 0.5s ease-out;
 }
 .specs .spec {
@@ -64,8 +66,10 @@
 }
 #buy_now {
     border-radius: 5px;
-    background: #f5af19;
+    background: #a8ff78;
     height: 30px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
 }
 .card:hover .denumire {
     transform: translateY(-60px);
@@ -73,7 +77,10 @@
     right: 75px;
 }
 .card:hover .price {
-    transform: translateX(-65px);
+    display: inline-block;
+    color: black;
+}
+.card:hover .price {
     font-size: 18px;
 }
 .card:hover .specs {
