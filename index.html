@@ -17,12 +17,8 @@
             <div class="centru">
                 <li><button class="produse_nav" onclick="treci_la_produse()">Produse</button>
                 </li>
-                <li>
-                    <a class="promo">Promotii</a>
-                </li>
             </div>
-            <div class="data">
-                <li>
+                <li class="searchli">
                     <a class="search">
                         <input type="text" >
                         <button><img src="Icons/transparency.png" height="30px" alt=""></button>
@@ -41,7 +37,6 @@
                             <button onclick="inchideAdmin()">Anulare</button>
                     </dialog>
                 </li>
-            </div>
         </ul>
     </header>
     <div class="page" id="first-page"> 
@@ -62,12 +57,10 @@
                     <p><span id="ani"></span> ani de experienta</p>
                 </div>
             </div>
-            <div class="banner">
                 <div class="circle-car"></div>
                 <div class="car-engine">
                     <img src="Media/mecanic.png" alt="car-engine">
                 </div>
-            </div>
         </div>
     </div>
     <div class="main-page" id="second-page">
@@ -121,61 +114,63 @@
             <div>
                 <button class="dialog" onclick="afiseazaCall()">Suna-ne!</button>
                 <dialog id="Call">
-                    <button onclick="sunaNrEmilian()">Suna la Craciun Emilian</button>
-                    <button class="middle" onclick="sunaNrDanMihai()">Suna la Craciun Dan-Mihai</button>
+                    <button onclick="sunaNrTatiana()">Suna la Tatiana, director</button>
+                    <button class="middle" onclick="sunaNrMihai()">Suna la Mihai, vanzator</button>
                     <button onclick="inchideCall()">Anulează</button>
                 </dialog>
             </div>
         </div>
         <hr>
     </div>
-    <div id="administrator">
-        <dialog id="dialog-formular">
-            <h3>Completeaza informatiile pentru achizitie</h3>
-            <form onsubmit="return adaugaMesaj()">
-                <label for="nume-prenume">Nume și Prenume:</label>
-                <input type="text" id="nume-prenume" name="nume-prenume" required>
+    <div id="administrator"></div>
+    <div id="produse">
+        <div>
+            <dialog id="MailFormular">
+                <form id="mesaj-formular" onsubmit="adaugaComanda(event)">
+                    <label for="nume-prenume">Nume și Prenume:</label>
+                    <input type="text" id="card-nume-prenume" name="nume-prenume" required>
                     
-                <label for="telefon">Număr de Telefon:</label>
-                <input type="tel" id="telefon" name="telefon" required>
-
-                <label for="strada">Strada:</label>
-                <input type="text" id="strada" name="strada" required>
-                
-                <button type="submit">Trimite</button>
-            </form>
-        </dialog>
-    </div>
-    <div id="produse">            
+                    <label for="telefon">Număr de Telefon:</label>
+                    <input type="tel" id="card-telefon" name="telefon" required>
+                    
+                    <label for="strada">Strada:</label>
+                    <input type="text" id="card-strada" name="strada" required>
+                    
+                    <input type="hidden" id="card_id" name="card_id">
+                    
+                    <button type="submit">Comanda</button>
+                    <button type="button" onclick="inchideMailForm()">Închide</button>
+                </form>
+            </dialog>
+        </div>    
         <div id="uleiuri">
             <div class="card" id="Ulei_Lukoil">
                 <img src="./Produse/uleilukoil.png" alt="Ulei_Lukoil">
                 <span class="denumire">Ulei Lukoil</span>
                 <span class="price">199 lei</span>
                 <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Ulei Lukoil, 199lei')" id="buy_now">Cumpara acum</button>
             </div>
             <div  class="card" id="Ulei_Kansler">
                 <img src="./Produse/uleikansler.png" alt="Ulei_Kansler">
                 <span class="denumire">Ulei Kansler</span>
                 <span class="price">159 lei</span>
                 <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Ulei Kansler, 159lei')" id="buy_now">Cumpara acum</button>
                 </div>  
             <div  class="card" id="Ulei_Elf">
                 <img src="./Produse/uleielf.png" alt="Ulei_Elf">
                 <span class="denumire">Ulei Elf</span>
                 <span class="price">189 lei</span>
                 <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Ulei Elf, 189lei')" id="buy_now">Cumpara acum</button>
             </div>  
-        
             <div  class="card" id="Ulei_Venol">
                 <img src="./Produse/uleivenol.png" alt="Ulei_Venol">
                 <span class="denumire">Ulei Venol</span>
                 <span class="price">179 lei</span>
                 <span class="spec">Semi-Sintetic<br>10W40, 1l</span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Ulei Ulei Venol, 179lei')" id="buy_now">Cumpara acum</button>
             </div>  
         </div>
         <div id="filtre">
@@ -184,35 +179,35 @@
                 <span class="denumire">Filtru Filtron</span>
                 <span class="price">99 lei</span>
                 <span class="spec">Filtru de aer<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Filtru Filtron AP013')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Filtru_AP051/4">
                 <img src="./Produse/filtruap0514.png" alt="Filtru_AP051/4">
                 <span class="denumire">Filtru Filtron AP051/4</span>
                 <span class="price">89 lei</span>
                 <span class="spec">Filtru de aer<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Filtru Filtron AP051')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Filtru_K1014">
                 <img src="./Produse/filtruk1014.png" alt="Filtru_K1014">
                 <span class="denumire">Filtru Filtron K1014</span>
                 <span class="price">99 lei</span>
                 <span class="spec">Filtru de salon<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Filtru Filtron 1014')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Filtru_OP525">
                 <img src="./Produse/filtruop525.png" alt="Filtru_OP525">
                 <span class="denumire">Filtru Filtron OP525</span>
                 <span class="price">109 lei</span>
                 <span class="spec">Filtru de ulei<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Filtru Filtron OP525')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Filtru_PP841/1">
                 <img src="./Produse/filtrupp8411.png" alt="Filtru_PP841/1">
                 <span class="denumire">Filtru Filtron PP841/1</span>
                 <span class="price">119 lei</span>
                 <span class="spec">Filtru pentru combustibil<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Filtru Filtron PP841')" id="buy_now">Cumpara acum</button>
             </div>
         </div>
         <div id="acumulatoare">
@@ -221,35 +216,35 @@
                 <span class="denumire">Acumulator President</span>
                 <span class="price">1299 lei</span>
                 <span class="spec">Acumulator<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Acumulator President')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Acum_Mega">
                 <img src="./Produse/acummega.png" alt="Acum_Mega">
                 <span class="denumire">Acumulator Mega</span>
                 <span class="price">1399 lei</span>
                 <span class="spec">Acumulator<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Acumulator Mega')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Acum_Energizer">
                 <img src="./Produse/acumenergizer.png" alt="Acum_Energizer">
                 <span class="denumire">Acumulator Energizer</span>
                 <span class="price">1599 lei</span>
                 <span class="spec">Acumulator<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Acumulator Energizer')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Acum_Snaider">
                 <img src="./Produse/acumsnaider.png" alt="Acum_Snaider">
                 <span class="denumire">Acumulator Snaider</span>
                 <span class="price">1199 lei</span>
                 <span class="spec">Acumulator<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Acumulator Snaider')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Acum_Akom">
                 <img src="./Produse/acumakom.png" alt="Acum_Akom">
                 <span class="denumire">Acumulator Akom</span>
                 <span class="price">1699 lei</span>
                 <span class="spec">Acumulator<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Acumulator Akom')" id="buy_now">Cumpara acum</button>
             </div>
         </div>
         <div id="cosmetica">
@@ -258,28 +253,28 @@
                 <span class="denumire">Sampon auto K2</span>
                 <span class="price">49 lei</span>
                 <span class="spec">Sampon pentru automobil<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Sampon Pentru Automobil')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Sol_K2Akra">
                 <img src="./Produse/solk2akra.png" alt="Solutie_K2Akra">
                 <span class="denumire">Solutie K2 Akra</span>
                 <span class="price">59 lei</span>
                 <span class="spec">Solutie pentru curatarea motorului<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Solutie K2 Akra')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Sol_Abro">
                 <img src="./Produse/solabro.png" alt="Solutie_Abro">
                 <span class="denumire">Solutie Abro</span>
                 <span class="price">59 lei</span>
-                <span class="spec">Solutie pentru curatarea carburatorului<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <span class="spec">Solutie pentru curatare<br></span>
+                <button type="button" onclick="afiseazaMailForm('Solutie Pentru Curatare')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Sol_K2Alaska">
                 <img src="./Produse/solk2alaska.png" alt="Solutie_K2Alaska">
                 <span class="denumire">Solutie K2 Alaska</span>
                 <span class="price">79 lei</span>
-                <span class="spec">Solutie pentru dezghetarea parbrizului<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <span class="spec">Solutie pentru dezghetare<br></span>
+                <button type="button" onclick="afiseazaMailForm('Solutie Pentru Dezghetare')" id="buy_now">Cumpara acum</button>
             </div>
         </div>
         <div id="accesorii">
@@ -288,28 +283,28 @@
                 <span class="denumire">Huse Alkantara</span>
                 <span class="price">129 lei</span>
                 <span class="spec">Huse auto<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Husa Alkantara')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Huse_Ozmer">
                 <img src="./Produse/huseozmer.png" alt="Huse_Ozmer">
                 <span class="denumire">Huse Ozmer</span>
                 <span class="price">139 lei</span>
                 <span class="spec">Huse auto<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Husa Ozmer')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Anv_Energ">
                 <img src="./Produse/anvenerg.png" alt="Anv_Energ">
                 <span class="denumire">Anvelope Energ</span>
                 <span class="price">219 lei</span>
                 <span class="spec">Anvelope auto<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Anvelopa Energ')" id="buy_now">Cumpara acum</button>
             </div>
             <div class="card" id="Anv_Debica">
                 <img src="./Produse/anvdebica.png" alt="Anv_Debica">
                 <span class="denumire">Anvelope Debica</span>
                 <span class="price">229 lei</span>
                 <span class="spec">Anvelope auto<br></span>
-                <button type="button" id="buy_now">Cumpara acum</button>
+                <button type="button" onclick="afiseazaMailForm('Anvelopa Debica')" id="buy_now">Cumpara acum</button>
             </div>
         </div>
     </div>
@@ -323,7 +318,7 @@
                     <p>Orașul Criuleni</p>
                 </div>
                 <div class="col-md-4">
-                    <h3>Contact</h3>
+                    <h3>Contacte</h3>
                     <ul>
                         <li>Tatiana Director 060454650</li>
                         <li>Mihai Vînzător 068216670</li>
@@ -332,19 +327,15 @@
                 <div class="col-md-4">
                     <h3>Info</h3>
                     <ul>
-                        <li>        <span class="flaticon">
-                            <a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons created by Freepik - Flaticon</a>
-                            <p>Acest website a fost realizat în cadrul competiției "Tekwill Junior Ambassadors"
-                                organizată de proiectul "Tekwill în Fiecare Școală" și nu reflectă neapărat
-                                opinia proiectului
-                            </p>
-                        </span></li>
-                    </ul>
-                    <ul class="social-icons">
-                        <li><a href="#"><i class='fa fa-facebook'></i></a></li>
-                        <li><a href="#"><i class='fa fa-twitter'></i></a></li>
-                        <li><a href="#"><i class='fa fa-instagram'></i></a></li>
-                        <li><a href="#"><i class='fa fa-telegram'></i></a></li>
+                        <li>        
+                            <span class="flaticon">
+                                <a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons created by Freepik - Flaticon</a>
+                                <p>Acest website a fost realizat în cadrul competiției "Tekwill Junior Ambassadors"
+                                    organizată de proiectul "Tekwill în Fiecare Școală" și nu reflectă neapărat
+                                    opinia proiectului
+                                </p>
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </div>
