@@ -78,6 +78,8 @@ body.scrollbar-end::-webkit-scrollbar-thumb {
 .menu .promo {
     color: #a8ff78;
     margin-left: 30px;
+    background: transparent;
+    margin-top: 10px;
 }
 .menu a:hover {
 	text-shadow: 3px 3px 10px black;
@@ -115,16 +117,17 @@ body.scrollbar-end::-webkit-scrollbar-thumb {
     margin-right: 30px;
 }
 #loginDialog {
-    width: 35%;
+    width: 50%;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3; /* Asigură că fereastra de dialog este afișată deasupra tuturor celorlalte elemente */
-    background-color: rgba(255, 255, 255, 0.9); /* Fundal semi-transparent */
-    padding: 20px; /* Spațiere interioară pentru conținut */
-    border-radius: 10px; /* Margini rotunjite pentru un aspect plăcut */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Umbra pentru efect de adâncime */
+    z-index: 3;
+    background-color: rgba(200, 200, 200, 0.4);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .page {
     background: linear-gradient(to top left, #222 10%, #333 30%, #444 70%, #555 90%);
@@ -167,11 +170,8 @@ body.scrollbar-end::-webkit-scrollbar-thumb {
     color: #78ff95;
     font-size: 22px;
 } 
-.car-engine, .car-piston, .car-wheel, .car-pompa {
+.car-engine{
     position: absolute;
-}
-.car-piston, .car-wheel, .car-pompa {
-    z-index: 2;
 }
 .car-engine {
     bottom: -10px;
@@ -180,34 +180,9 @@ body.scrollbar-end::-webkit-scrollbar-thumb {
 .car-engine img {
     height: 500px;
 }
-.car-piston {
-    top: 39%;
-    right: 41%;
-}
-.car-piston img {
-    height: 170px;
-}
-.car-wheel {
-    top: 23.8%;
-    right: 10.5%;
-}
-.car-wheel img {
-    height: 105px;
-}
-.car-pompa {
-    top: 60%;
-    right: 0%;
-}
-.car-pompa img {
-    height: 130px;
-}
-.circle-car, .circle-piston, .circle-wheel, .circle-pompa {
+.circle-car{
     position: absolute;
     border-radius: 50%;
-}
-.circle-piston, .circle-wheel, .circle-pompa {
-    background: #222;
-    z-index: 1;
 }
 .circle-car {
     background: #333;
@@ -215,24 +190,6 @@ body.scrollbar-end::-webkit-scrollbar-thumb {
     width: 580px;
     bottom: -20%;
     right: 4%;
-}
-.circle-piston {
-    width: 140px;
-    height: 140px;
-    top: 43%;
-    right: 42%;
-}
-.circle-wheel {
-    width: 100px;
-    height: 100px;
-    top: 24%;
-    right: 12%;
-}
-.circle-pompa {
-    width: 100px;
-    height: 100px;
-    top: 66%;
-    right: 2%;
 }
 .main-text {
     position: absolute;
@@ -376,6 +333,10 @@ button {
     margin-top: 10px;
     margin-right:30px;
 }
+.nav_end {
+    display: flex;
+    margin-right: 20px;
+}
 footer {
     display: flex;
     justify-content: space-around;
@@ -388,10 +349,11 @@ footer span a {
     font-family: 'Nunito', sans-serif;
 }
 #administrator {
-    min-height: 81.7vh;
+    min-height: 90vh;
     background: #555;
+    padding-top: 10px;
 }
-#produse {
+#produse{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -407,7 +369,6 @@ footer span a {
     margin-top: 30px;
 }
 .card{
-    position: relative;
     width: 200px;
     height: 350px;
     background-color: #888;
@@ -420,7 +381,7 @@ footer span a {
 }
 .card img {
     margin-top: 25px;
-    width: 100%;
+    height: 70%;
     transition: all 0.5s ease-in-out, border;
 
 }
@@ -430,7 +391,7 @@ footer span a {
 }
 .card:hover img {
     margin-top: 10px;
-    width: 90%;
+    height: 60%;
 }
 .card span {
     font-size: 22px;
@@ -479,140 +440,28 @@ footer span a {
 .card:hover .spec, .card:hover #buy_now {
     transform: translateY(10px);
 }
-/*---------------------------------------------------------------------*/
-@media only screen and (max-width: 1200px) {
-    .main-page .map iframe {
-        width: 550px;
-    }
-    .circle-piston {
-        width: 130px;
-        height: 130px;
-        top: 30%;
-        right: 47%;
-    }
-    .car-piston {
-        top: 26%;
-        right: 46%;
-    }
-    .car-piston img {
-        height: 160px;
-    }
-    .car-wheel {
-        right: 10%;
-    }
-}
-@media only screen and (max-width: 1100px) {
-    .main-page .map iframe {
-        width: 500px;
-    }
-    .circle-car {
-        height: 550px;
-        width: 550px;
-    }
-    .car-engine img {
-        height: 460px;
-    }
-    .circle-piston {
-        width: 115px;
-        height: 115px;
-        top: 33%;
-        right: 45%;
-    }
-    .car-piston {
-        top: 29%;
-        right: 44%;
-    }
-    .car-piston img {
-        height: 140px;
-    }
-    .main-text {
-        width: 55%;
-    }
-    .main-text .mesaj {
-        width: 65%;
-    }
-}
-@media only screen and (max-width: 1000px) {
-    .main-page .map iframe {
-        width: 450px;
-    }
-    .circle-car {
-        height: 520px;
-        width: 520px;
-    }
-    .car-engine img {
-        height: 430px;
-    }
-    .circle-wheel {
-        top: 30%;
-    }
-    .car-wheel {
-        top: 29.7%;
-    }
-}
-@media only screen and (max-width: 950px) {
-    .main-text {
-        width: 50%;
-    }
-    .main-text .main {
-        font-size: 36px;
-    }
-    .main-text .mesaj {
-        width: 65%;
-    }
-    .circle-piston {
-        width: 110px;
-        height: 110px;
-        top: 35%;
-        right: 47%;
-    }
-    .car-piston {
-        top: 31%;
-        right: 46%;
-    }
-    .car-piston img {
-        height: 140px;
-    }
-    .circle-car {
-        height: 500px;
-        width: 500px;
-    }
-    .car-engine img {
-        height: 410px;
-    }
-}
-@media only screen and (max-width: 900px) {
-    .main-page .map iframe {
-        width: 400px;
-    }
-}
-@media only screen and (max-width: 800px) {
-    .about {
-        display: block;
-        text-align: center;
-    }
-    .main-page .map iframe {
-        width: 85%;
-        margin-top: 50px;
-    }
-    .main-page .desprenoi {
-        width: 85%;
-        margin-top: 0px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
 footer {
     background-color: #201F21;
-    color:#fff;
+    color: #999;
     padding: 30px 0;
-font-family: 'Montserrat',monospace;
-font-weight:bold; 
+    font-family: 'Montserrat',monospace;
+    font-weight:bold; 
 }
 .container {
     max-width:90%;
     margin:0 auto;
     padding:0 15px;
+}
+.produse_nav {
+    margin-top: 10px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+	text-shadow: 3px 3px 5px black;
+}
+.produse_nav:hover {
+	text-shadow: 3px 3px 10px black;
 }
 .row {
     display:flex;
@@ -625,7 +474,7 @@ font-weight:bold;
     max-width:33%;
     text-align:center;
 }
- footer h3 {
+footer h3 {
     margin-bottom:15px;
     color:#78ff95;
 }
@@ -645,6 +494,28 @@ footer li {
     color:#fff;
     font-size:30px;
 }
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input, textarea {
+    margin-bottom: 10px;
+}
+#administrator {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.mesaj {
+    padding: 10px;
+    position: relative;
+}
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
 @media (max-width:991px) {
 .col-md-4 {
     flex:0 0 50%;
@@ -655,5 +526,110 @@ footer li {
     .col-md-4 {
         flex:0 0 100%;
         max-width:100%;
+    }
+}
+
+/*---------------------------------------------------------------------*/
+@media only screen and (max-width: 1200px) {
+    .main-page .map iframe {
+        width: 550px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .main-page .map iframe {
+        width: 500px;
+    }
+    .circle-car {
+        height: 550px;
+        width: 550px;
+    }
+    .car-engine img {
+        height: 460px;
+    }
+    .main-text {
+        width: 55%;
+    }
+    .main-text .mesaj {
+        width: 65%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .main-page .map iframe {
+        width: 450px;
+    }
+    .circle-car {
+        height: 520px;
+        width: 520px;
+    }
+    .car-engine img {
+        height: 430px;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .main-text {
+        width: 50%;
+    }
+    .main-text .main {
+        font-size: 36px;
+    }
+    .main-text .mesaj {
+        width: 65%;
+    }
+    .circle-car {
+        height: 500px;
+        width: 500px;
+    }
+    .car-engine img {
+        height: 410px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .main-page .map iframe {
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .main-text {
+        width: 90%;
+    }
+    .main-text .mesaj {
+        width: 80%;
+    }
+    .content {
+        height: 140vh;
+    }
+    .circle-car {
+        height: 500px;
+        width: 500px;
+        transform: translateY(300px);
+    }
+    .car-engine img {
+        height: 410px;
+        transform: translateY(305px);  
+    }
+}
+@media only screen and (max-width: 800px) {
+    .about {
+        display: block;
+        text-align: center;
+    }
+    .main-page .map iframe {
+        width: 85%;
+        margin-top: 50px;
+    }
+    .main-page .desprenoi {
+        width: 85%;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .nav_end {
+        position: relative;
+        right: 0%;
+    }
+    .search input {
+        width: 80%;
     }
 }
